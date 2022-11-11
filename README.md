@@ -1,27 +1,11 @@
-# AppNgxDatatableDynamic
+# Angular ngx datatable
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.
+ngx-datatable is an Angular component for presenting large and complex data. It has all the  features you would expect from any other table but in a light package with no external dependencies. The table was designed to be extremely flexible and light; it doesn't make any assumptions about  your data or how you: filter, sort or page it. It also support "row detail" and "row grouping". 
 
-## Development server
+[Go to the demo](https://www.stefanomarchisio.it/AppNgxdatatable/index.html)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+```diff
+- The names displayed were generated with a random name generator and are not real people! 
+```
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![alt text](https://www.stefanomarchisio.it/img/ngx-angular-datatable4.png)

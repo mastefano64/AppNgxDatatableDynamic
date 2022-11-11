@@ -11,7 +11,7 @@ in detail (this is present in example 5 - I'am a dynamic component - DetailExtra
 
 In the project there is also a datasource for client and server paging.
 
-[Go to the demo](https://www.stefanomarchisio.it/AppNgxdatatable/index.html)
+[Go to the demo](https://www.stefanomarchisio.it/AppNgxdatatableDynamic/index.html)
 
 ```diff
 - The names displayed were generated with a random name generator and are not real people! 

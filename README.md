@@ -9,6 +9,8 @@ Through the "Configure" button it is possible to establish the fields that must 
 the table and in detail and varying the order. It is also possible to insert a custom component
 in detail (this is present in example 5 - I'am a dynamic component - DetailExtraComponent).
 
+In the project there is also a datasource for client and server paging.
+
 [Go to the demo](https://www.stefanomarchisio.it/AppNgxdatatable/index.html)
 
 ```diff

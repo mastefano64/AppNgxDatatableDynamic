@@ -5,8 +5,8 @@ features you would expect from any other table but in a light package with no ex
 The table was designed to be extremely flexible and light; it doesn't make any assumptions about
 your data or how you: filter, sort or page it. It also support "row detail" and "row grouping".
 
-1) Through the "Configure" button it is possible to establish the fields that must be present in the
-table and in detail. In addition to varying the order. 2) It is also possible to insert a custom component
+Through the "Configure" button it is possible to establish the fields that must be present in the
+table and in detail. In addition to varying the order. It is also possible to insert a custom component
 in detail (this is present in example 5 - I'am a dynamic component - DetailExtraComponent).
 
 [Go to the demo](https://www.stefanomarchisio.it/AppNgxdatatable/index.html)

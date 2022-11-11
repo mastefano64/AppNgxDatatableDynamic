@@ -1,0 +1,69 @@
+<div *ngIf="headertext">
+  {{ headertext }}
+</div>
+
+<ngx-datatable class="material"
+  [columns]="columns"
+  [columnMode]="'force'"
+  [headerHeight]="50"
+  [footerHeight]="50"
+  [rowHeight]="50"
+  [rows]="rows"
+  [count]="count"
+  [offset]="page"
+  [limit]="pagesize"
+  [groupExpansionDefault]="groupexpansiondefault"
+  [groupRowsBy]="grouprowsby"
+  [externalPaging]="externalpaging"
+  [externalSorting]="externalsorting"
+  (page)="onPage($event)"
+  (sort)="onSort($event)"
+  #mytable>
+
+  <ng-container *ngIf="groupenabled === true && detailenabled === false">
+    <ngx-datatable-group-header [rowHeight]="50" (toggle)="onGroupToggle($event)">
+      <ng-template ngx-datatable-group-header-template let-group="group" let-expanded="expanded">
+        <div>
+          <a [class.datatable-icon-right]="!expanded" [class.datatable-icon-down]="expanded"
+                               (click)="toggleExpandGroup(group)">
+            <b>{{ grouplabel }} ({{ group.value.length }}): {{ group.key }}</b>
+          </a>
+        </div>
+      </ng-template>
+    </ngx-datatable-group-header>
+  </ng-container>
+
+  <ng-container *ngIf="detailenabled === true && groupenabled === false">
+    <ngx-datatable-row-detail (toggle)="onDetailToggle($event)">
+      <ng-template ngx-datatable-row-detail-template let-row="row" let-expanded="expanded" >
+        <div>
+          <div *ngFor="let col of details">
+            <span>{{ col.name }}: </span><span>{{ row[col.prop] }}</span>
+          </div>
+          <app-container-table-template *ngIf="componentdetail" [componentdetail]="componentdetail"
+                           [row]="row" ></app-container-table-template>
+        </div>
+      </ng-template>
+    </ngx-datatable-row-detail>
+    <ngx-datatable-column [width]="50" [resizeable]="false" [sortable]="false" [draggable]="false" [canAutoResize]="false">
+      <ng-template ngx-datatable-cell-template let-expanded="expanded" let-row="row">
+        <div>
+          <a [class.datatable-icon-right]="!expanded" [class.datatable-icon-down]="expanded"
+                               (click)="toggleExpandDetail(row)">
+          </a>
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+  </ng-container>
+
+  <ngx-datatable-column *ngFor="let col of columns" [name]="col.name" [sortable]="col.sort">
+    <ng-template ngx-datatable-header-template>
+      <app-table-search-field *ngIf="searchTable && col.searchable" [name]="col.name">
+      </app-table-search-field>
+      {{ col.name }}
+    </ng-template>
+    <ng-template ngx-datatable-cell-template let-row="row">
+      {{ row[col.prop] }}
+    </ng-template>
+  </ngx-datatable-column>
+</ngx-datatable>

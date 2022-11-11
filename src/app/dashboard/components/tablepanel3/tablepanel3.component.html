@@ -1,0 +1,32 @@
+
+<div class="panelserach">
+  <div>
+    <app-search-field [name]="'searchfield'" [placeholder]="'Ricerca anagrafica'"
+       [debouncetime]="500" [minlenght]="3" #searchfield></app-search-field>
+  </div>
+  <div>
+    <app-button-dialog-config [tabledef]="def" [keystorage]="'TablePanel3'"
+           (change)="onConfigChange()"></app-button-dialog-config>
+  </div>
+</div>
+
+<br><br>
+
+<app-datatable
+  [columns]="columns"
+  [rows]="rows"
+  [count]="pagstatus.count"
+  [page]="pagstatus.page"
+  [pagesize]="pagstatus.pagesize"
+  [details]="listdatail"
+  [groups]="listgroup"
+  [groupexpansiondefault]="groupexpansiondefault"
+  [detailenabled]="detailenabled"
+  [groupenabled]="groupenabled"
+  [grouprowsby]="grouprowsby"
+  [externalpaging]="true"
+  [externalsorting]="true"
+  (changepage)="onPage($event)"
+  (changesort)="onSort($event)"
+  #mytable>
+</app-datatable>

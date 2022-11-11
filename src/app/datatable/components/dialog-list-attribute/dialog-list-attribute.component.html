@@ -1,0 +1,31 @@
+<div class="attribute-panel">
+  <ng-container *ngIf="typecol === 'table'">
+    <div cdkDropList class="attribute-list" (cdkDropListDropped)="onDropColumn($event)">
+      <div class="paneFlex attribute-box" *ngFor="let column of listcolumn" cdkDrag>
+        <div class="paneFlexSx">
+          <span [ngClass]="{ 'textdisabled': column.tablevisible === false }">{{ column.name }}</span>
+        </div>
+        <div class="paneFlexDx">
+          <mat-checkbox [(ngModel)]="column.tablevisible" (change)="onCheckChange($event)">
+            Visibile
+          </mat-checkbox>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="typecol === 'detail'">
+    <div cdkDropList class="attribute-list" (cdkDropListDropped)="onDropColumn($event)">
+      <div class="paneFlex attribute-box" *ngFor="let column of listcolumn" cdkDrag>
+        <div class="paneFlexSx">
+          <span [ngClass]="{ 'textdisabled': column.detailvisible === false }">{{ column.name }}</span>
+        </div>
+        <div class="paneFlexDx">
+          <mat-checkbox [(ngModel)]="column.detailvisible" (change)="onCheckChange($event)">
+            Visibile
+          </mat-checkbox>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

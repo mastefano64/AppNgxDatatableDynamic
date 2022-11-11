@@ -1,0 +1,8 @@
+.panelserach {
+  display: flex;
+  align-items: center;
+}
+
+.panelserach div {
+  padding: 4px;
+}

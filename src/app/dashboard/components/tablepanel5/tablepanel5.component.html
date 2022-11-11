@@ -1,0 +1,107 @@
+<div class="panelserach">
+  <div>
+    <app-search-field [name]="'searchfield'" [placeholder]="'Ricerca anagrafica'"
+       [debouncetime]="500" [minlenght]="3" #searchfield></app-search-field>
+  </div>
+  <div>
+    <app-button-dialog-config [tabledef]="def" [keystorage]="'TablePanel5'"
+           (change)="onConfigChange()"></app-button-dialog-config>
+  </div>
+</div>
+
+<br><br>
+
+<div class="combopanel">
+  <mat-form-field>
+    <mat-label>Raggruppamenti</mat-label>
+    <mat-select (selectionChange)="onChangeCombobox($event)" [ngModel]="groupvalue">
+      <mat-option value="1">Senza dettaglio</mat-option>
+      <mat-option value="2">Con dettaglio</mat-option>
+      <mat-option value="3">Raggruppati per C.a.p</mat-option>
+      <mat-option value="4">Raggruppati per Prov.</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<br><br>
+
+<app-datatable *ngIf="comptypeview === 1"
+  [headertext]="headertext"
+  [columns]="columns"
+  [rows]="rows"
+  [count]="pagstatus.count"
+  [page]="pagstatus.page"
+  [pagesize]="pagstatus.pagesize"
+  [details]="listdatail"
+  [groups]="listgroup"
+  [groupexpansiondefault]="groupexpansiondefault"
+  [detailenabled]="detailenabled"
+  [groupenabled]="groupenabled"
+  [grouprowsby]="grouprowsby"
+  [externalpaging]="true"
+  [externalsorting]="true"
+  (changepage)="onPage($event)"
+  (changesort)="onSort($event)"
+  #mytable>
+</app-datatable>
+
+<app-datatable *ngIf="comptypeview === 2"
+  [headertext]="headertext"
+  [columns]="columns"
+  [rows]="rows"
+  [count]="pagstatus.count"
+  [page]="pagstatus.page"
+  [pagesize]="pagstatus.pagesize"
+  [details]="listdatail"
+  [groups]="listgroup"
+  [groupexpansiondefault]="groupexpansiondefault"
+  [detailenabled]="detailenabled"
+  [groupenabled]="groupenabled"
+  [grouprowsby]="grouprowsby"
+  [externalpaging]="true"
+  [externalsorting]="true"
+  [componentdetail]="componentdetail"
+  (changepage)="onPage($event)"
+  (changesort)="onSort($event)"
+  #mytable>
+</app-datatable>
+
+<app-datatable *ngIf="comptypeview === 3"
+  [headertext]="headertext"
+  [columns]="columns"
+  [rows]="rows"
+  [count]="pagstatus.count"
+  [page]="pagstatus.page"
+  [pagesize]="pagstatus.pagesize"
+  [details]="listdatail"
+  [groups]="listgroup"
+  [groupexpansiondefault]="groupexpansiondefault"
+  [detailenabled]="detailenabled"
+  [groupenabled]="groupenabled"
+  [grouprowsby]="grouprowsby"
+  [externalpaging]="true"
+  [externalsorting]="true"
+  (changepage)="onPage($event)"
+  (changesort)="onSort($event)"
+  #mytable>
+</app-datatable>
+
+<app-datatable *ngIf="comptypeview === 4"
+  [headertext]="headertext"
+  [columns]="columns"
+  [rows]="rows"
+  [count]="pagstatus.count"
+  [page]="pagstatus.page"
+  [pagesize]="pagstatus.pagesize"
+  [details]="listdatail"
+  [groups]="listgroup"
+  [groupexpansiondefault]="groupexpansiondefault"
+  [detailenabled]="detailenabled"
+  [groupenabled]="groupenabled"
+  [grouprowsby]="grouprowsby"
+  [externalpaging]="true"
+  [externalsorting]="true"
+  (changepage)="onPage($event)"
+  (changesort)="onSort($event)"
+  #mytable>
+</app-datatable>

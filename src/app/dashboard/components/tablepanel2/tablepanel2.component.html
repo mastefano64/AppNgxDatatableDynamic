@@ -1,0 +1,31 @@
+<div class="panelserach">
+  <div>
+    <app-search-field [name]="'searchfield'" [placeholder]="'Ricerca anagrafica'"
+       [debouncetime]="500" [minlenght]="0" #searchfield></app-search-field>
+  </div>
+  <div>
+    <button type="button" mat-raised-button color="primary" (click)="onClearSearch()">
+      Pulisci ricerca
+    </button>
+  </div>
+  <div>
+    <app-button-dialog-config [tabledef]="def" [keystorage]="keystorage"
+           (change)="onConfigChange()"></app-button-dialog-config>
+  </div>
+</div>
+
+<br><br>
+
+<app-datatable
+  [columns]="columns"
+  [rows]="rows"
+  [count]="pagstatus.count"
+  [page]="pagstatus.page"
+  [pagesize]="pagstatus.pagesize"
+  [searchTable]="true"
+  [externalpaging]="true"
+  [externalsorting]="true"
+  (changepage)="onPage($event)"
+  (changesort)="onSort($event)"
+  #mytable>
+</app-datatable>

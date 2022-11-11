@@ -1,0 +1,26 @@
+<div>
+  <div class="actions">
+    <button mat-raised-button color="primary" (click)="onSave()" [disabled]="!modified">Salva</button>&nbsp;
+    <button mat-raised-button color="secondary" (click)="onClose()">Chiudi</button>&nbsp;
+    <span class="lableupdated" *ngIf="modified">Modificato</span>
+  </div>
+
+  <div class="tabgroup">
+    <mat-tab-group>
+      <mat-tab label="Tabella">
+        <app-dialog-list-attribute [typecol]="'table'" [keystorage]="keystorage"
+           [tabledef]="newtabledef" (changecheckbox)="onChangeCheckbox()">
+        </app-dialog-list-attribute>
+      </mat-tab>
+      <mat-tab label="Dettaglio">
+        <app-dialog-list-attribute [typecol]="'detail'" [keystorage]="keystorage"
+           [tabledef]="newtabledef" (changecheckbox)="onChangeCheckbox()">
+        </app-dialog-list-attribute>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+
+  <div class="actionreset">
+    <button mat-raised-button color="primary" (click)="onReset()">Reset</button>
+  </div>
+</div>

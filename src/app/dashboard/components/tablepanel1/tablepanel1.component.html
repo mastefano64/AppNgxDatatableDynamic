@@ -1,0 +1,21 @@
+<div class="panelserach">
+  <div>
+    <app-button-dialog-config [tabledef]="def" [keystorage]="'TablePanel1'"
+           (change)="onConfigChange()"></app-button-dialog-config>
+  </div>
+</div>
+
+<br><br>
+
+<app-datatable
+  [columns]="columns"
+  [rows]="rows"
+  [count]="count"
+  [page]="page"
+  [pagesize]="pagesize"
+  [externalpaging]="false"
+  [externalsorting]="false"
+  (changepage)="onPage($event)"
+  (changesort)="onSort($event)"
+  #mytable>
+</app-datatable>

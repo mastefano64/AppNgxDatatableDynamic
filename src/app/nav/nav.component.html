@@ -1,0 +1,30 @@
+<mat-sidenav-container fullscreen>
+  <mat-sidenav position="start" #sideSX>
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['/home']">
+        <mat-icon>home</mat-icon>
+        <span>home</span>
+      </a>
+
+      <a mat-list-item (click)="onGoPageDashboard()">
+        <mat-icon>link</mat-icon>
+        <span>Dashboard</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="sideSX.open('mouse')">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div class="navTitleCommandBar">
+      <div class="navTitle1">AppNgxDatatableDynamic</div>
+      <div class="navTitle2">
+        ?
+      </div>
+    </div>
+  </mat-toolbar>
+  <div class="pagecontainer">
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-container>

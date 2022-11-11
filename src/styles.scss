@@ -1,0 +1,61 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@swimlane/ngx-datatable/index.css';
+@import '~@swimlane/ngx-datatable/themes/material.scss';
+@import '~@swimlane/ngx-datatable/assets/icons.css';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.pagecontainer {
+  margin: 15px 15px 40px 15px;
+}
+
+.navTitleCommandBar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+  .navTitleCommandBar .navTitle1 {
+    width: 80%;
+    padding-left: 20px;
+  }
+
+  .navTitleCommandBar .navTitle2 {
+    width: 20%;
+    padding-right: 20px;
+  }
+
+.form-container-with-row mat-form-field {
+  display: block;
+}
+
+.form-container100 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-container100 > * {
+  width: 100%;
+}
+
+.form-container50 {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.form-container50 > * {
+  width: 100%;
+}
+
+.important {
+  font-size: 18px;
+  color: red;
+}
+
+.home-image img {
+  width: 50%;
+}
